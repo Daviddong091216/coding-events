@@ -22,12 +22,14 @@ public class EventController {
 //        eventsList.add("Apple WWDC");
 //        eventsList.add("SpringOne platform");
         model.addAttribute("events", eventsList);
+        model.addAttribute("title","All Events");
         return "events/index";
     }
 
     //coding-events/create
     @GetMapping("create")
-    public String renderCreateEventForm(){
+    public String renderCreateEventForm(Model model){
+        model.addAttribute("title","Create Events");
         return "events/create";
     }
 
@@ -36,6 +38,8 @@ public class EventController {
     public String createEvent(@RequestParam String eventName,Model model){
         eventsList.add(eventName);
         model.addAttribute("events",eventsList);
+        model.addAttribute("title","All Events");
+
         return "events/index";//it is easy to understand, we do not use displayAllEvents method.
 //        return "redirect:";
 
