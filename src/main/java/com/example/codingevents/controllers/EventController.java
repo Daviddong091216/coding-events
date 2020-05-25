@@ -9,21 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-//@RequestMapping("events")
-
+@RequestMapping("coding-events")
 public class EventController {
 
-    //    @GetMapping
-    @GetMapping("events")
+    @GetMapping
     public String displayAllEvents(Model model) {
-        List<String> events = new ArrayList<>();
-        events.add("Code with pride");
-        events.add("Strange loop");
-        events.add("Apple WWDC");
-        events.add("SpringOne platform");
-        model.addAttribute("events", events);
+        List<String> eventsList = new ArrayList<>();
+        eventsList.add("Code with pride");
+        eventsList.add("Strange loop");
+        eventsList.add("Apple WWDC");
+        eventsList.add("SpringOne platform");
+        model.addAttribute("events", eventsList);
         return "events/index";
-
     }
 
 
