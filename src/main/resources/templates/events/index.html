@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tr th:each="event : ${events}">
-            <td th:text="${event}">Display event here!</td>
+            <td th:text="${event.name}">Display event here!</td>
         </tr>
     </table>
 </body>
