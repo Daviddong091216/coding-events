@@ -5,6 +5,7 @@
 <body class="container">
 
 <header th:replace="fragments :: header"></header>
+
     <form method="post">
         <th:block th:each="event : ${events}">
             <div class="form-group">
