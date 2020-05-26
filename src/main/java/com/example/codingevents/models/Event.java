@@ -1,6 +1,6 @@
 package com.example.codingevents.models;
 
-//import javax.validation.constraints.Size;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class Event {
@@ -8,7 +8,7 @@ public class Event {
     private int id;
     private static int nextId = 1;
 
-//    @Size()
+    @Size()
     private String name;
     private String description;
 
