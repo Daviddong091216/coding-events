@@ -1,9 +1,11 @@
 package com.example.codingevents.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
+
 
 public class Event {
 

@@ -1,3 +1,4 @@
+/*
 plugins {
 	id 'org.springframework.boot' version '2.3.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
@@ -8,6 +9,12 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
 
+//configurations {
+//	developmentOnly
+//	runtimeClasspath {
+//		extendsFrom developmentOnly
+//	}
+//}
 
 
 repositories {
@@ -18,7 +25,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jpa'
+	implementation 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'//It is Steve's help!May 26,2020.
+	implementation 'org.springframework.boot:spring-boot-starter-persistence'//David modified.
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -27,4 +37,43 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}*/
+
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'org.launchcode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '13'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+//	implementation 'android.arch.persistence.room:runtime:1.1.1'
+//	annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+}
+
+test {
+    useJUnitPlatform()
 }
