@@ -8,12 +8,6 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
 
-//configurations {
-//	developmentOnly
-//	runtimeClasspath {
-//		extendsFrom developmentOnly
-//	}
-//}
 
 
 repositories {
@@ -21,20 +15,10 @@ repositories {
 }
 
 
-//dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//	implementation 'mysql:mysql-connector-java'
-//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-//	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-//		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-//	}
-//}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'//It is Steve's help!May 26,2020.
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
