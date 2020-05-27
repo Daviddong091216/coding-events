@@ -4,19 +4,22 @@
 </head>
 <body class="container">
     <header th:replace="fragments :: header"></header>
-    <p th:text="${errorMsg}" style="color:red;"></p>
+<!--    <p th:text="${errorMsg}" style="color:red;"></p>-->
 
     <form method="post" action="/coding-events/create">
         <div class="form-group">
             <lable>Name
-                <input type="text" name="name" class="form-control">
+                <input type="text" th:field="${event.name}" class="form-control">
             </lable>
+            <p class="error" th:errors="${event.name}"></p>
             <lable>Description
-                <input type="text" name="description" class="form-control">
+                <input type="text" th:field="${event.description}" class="form-control">
             </lable>
+            <p class="error" th:errors="${event.description}"></p>
             <lable>Contact Email
-                <input type="text" name="contactEmail" class="form-control">
+                <input type="text" th:field="${event.contactEmail}" class="form-control">
             </lable>
+            <p class="error" th:errors="${event.contactEmail}"></p>
         </div>
         <div class="form-group">
             <input type="submit" value="Create Event" class="btn btn-success">
