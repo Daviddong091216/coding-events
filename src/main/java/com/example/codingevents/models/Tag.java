@@ -30,6 +30,10 @@ public class Tag extends AbstractEntity {
         this.name = name;
     }
 
+    public String getDisplayName() {
+        return "#" + name + " ";
+    }
+
     public List<Event> getEvents() {
         return events;
     }
