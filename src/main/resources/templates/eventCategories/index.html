@@ -6,15 +6,14 @@
 
 <header th:replace="fragments :: header"></header>
 
-<!--    <p th:unless="${events} and ${events.size()}">No events!</p>-->
 <table class="table table-striped">
     <thead>
     <tr>
         <th>Category Name</th>
     </tr>
     </thead>
-    <tr th:each="category : ${categories}">
-        <td th:text="${category.name}"></td>
+    <tr th:each="eventCategory : ${categories}">
+        <td><a th:text="${eventCategory.name}" th:href="'/coding-events?categoryId=' + ${eventCategory.id}"></a></td>
     </tr>
 </table>
 </body>
