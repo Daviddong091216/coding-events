@@ -21,13 +21,14 @@
             </lable>
             <p class="error" th:errors="${event.contactEmail}"></p>
             <div class="form-group">
-            <lable>Type
-                <select th:field="${event.type}">
-                    <option th:each="type : ${types}"
-                            th:value="${type}"
-                            th:text="${type.displayName}"
+            <lable>Category
+                <select th:field="${event.eventCategory}">
+                    <option th:each="eventCategory : ${categories}"
+                            th:value="${eventCategory.id}"
+                            th:text="${eventCategory.name}"
                     ></option>
                 </select>
+                <p class="error" th:errors="${event.eventCategory}"></p>
             </lable>
             </div>
         </div>
