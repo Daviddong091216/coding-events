@@ -39,10 +39,7 @@ public class EventController {
                 model.addAttribute("title", "Events in  category:" + category.getName());
                 model.addAttribute("events", category.getEvents());
             }
-
         }
-
-
         return "events/index";
     }
 
@@ -57,7 +54,7 @@ public class EventController {
 
     //coding-events/create
     @PostMapping("create")
-    public String createEvent(@ModelAttribute @Valid Event newEvent,
+    public String processCreateEventForm(@ModelAttribute @Valid Event newEvent,
                               Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
@@ -83,6 +80,22 @@ public class EventController {
             }
         }
         return "redirect:";
+    }
+
+    @GetMapping("detail")
+    public String displayEventDetails(@RequestParam Integer eventId, Model model) {
+
+        Optional<Event> result = eventRepository.findById(eventId);
+
+        if (result.isEmpty()) {
+            model.addAttribute("title", "Invalid Event ID: " + eventId);
+        } else {
+            Event event = result.get();
+            model.addAttribute("title", event.getName() + " Details");
+            model.addAttribute("event", event);
+        }
+
+        return "events/detail";
     }
 
 
